@@ -1,9 +1,10 @@
 System.config({
+    defaultExtension: 'js',
     paths: {
-        'npm:': '/node_modules/'
+        'npm:': 'node_modules/'
     },
     map: {
-        app: 'dev/src/app',
+        app: 'dist',
         '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
         '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
         '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
@@ -15,7 +16,7 @@ System.config({
         'tslib': 'npm:tslib/tslib.js'
     },
     packages: {
-        'dev/src/app': {},
+        app: { main: './src/main.js', defaultExtension: 'js' },
         'rxjs': {},
         'core-js': {},
         'zone.js': {}

@@ -1,18 +1,22 @@
 <html>
 
     <head>
-        <title>Hello, Angular</title>
+        <title>My App</title>
     </head>
 
     <body>
+        
         <app-main>Loading...</app-main>
+
         <script src="node_modules/systemjs/dist/system.src.js"></script>
         <script src="systemjs.config.js"></script>
+
         <script>
-            System.import('build/src/main.js').catch(function (err) {
+            System.import('dev/src/main.js').catch(function (err) {
                 console.error(err);
             });
         </script>
+
     </body>
 
 </html>

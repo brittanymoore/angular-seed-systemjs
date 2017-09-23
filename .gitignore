@@ -1,2 +1,4 @@
-build
+dev
+dist
+production
 node_modules
