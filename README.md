@@ -23,7 +23,7 @@ npm start
 | Build Mode        | Command        | Output Dir | EnableProdMode | Uglify | AOT    |
 | ----------------- | -------------- | -------    | -------------- | ------ | -----  |
 | Development       | build          | dev        | no             | no     | no     |
-| Production        | build:prod     | production | no             | yes    | no     |
+| Production        | build:prod     | dist       | no             | yes    | no     |
 
 Each mode has a start command that runs the app locally in your browser:
 
