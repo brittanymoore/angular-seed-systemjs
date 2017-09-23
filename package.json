@@ -1,0 +1,27 @@
+{
+    "name": "angular-seed-systemjs",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "build": "tsc",
+        "start": "live-server"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@angular/common": "^4.4.3",
+        "@angular/compiler": "^4.4.3",
+        "@angular/core": "^4.4.3",
+        "@angular/platform-browser": "^4.4.3",
+        "@angular/platform-browser-dynamic": "^4.4.3",
+        "core-js": "^2.5.1",
+        "rxjs": "^5.4.3",
+        "systemjs": "^0.20.19",
+        "zone.js": "^0.8.17"
+    },
+    "devDependencies": {
+        "live-server": "^1.2.0",
+        "typescript": "^2.5.2"
+    }
+}
