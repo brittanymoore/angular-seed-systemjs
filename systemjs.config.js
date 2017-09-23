@@ -3,7 +3,7 @@ System.config({
         'npm:': '/node_modules/'
     },
     map: {
-        app: 'dist/app',
+        app: 'build/src/app',
         '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
         '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
         '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
@@ -15,7 +15,7 @@ System.config({
         'tslib': 'npm:tslib/tslib.js'
     },
     packages: {
-        'dist/app': {},
+        'build/src/app': {},
         'rxjs': {},
         'core-js': {},
         'zone.js': {}
