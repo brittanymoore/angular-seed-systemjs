@@ -87,7 +87,7 @@ gulp.task('prod-copy-index', function () {
 });
 
 gulp.task('prod-bundle', ['prod-copy-index', 'prod-build-script'], function () {
-    const builder = new systemjsBuilder('', 'systemjs.config.prod.js');
+    const builder = new systemjsBuilder('', 'config/systemjs.config.js');
     return builder.buildStatic('app', 'dist/app.bundle.min.js', {
             minify: true,
             mangle: true,
@@ -100,7 +100,7 @@ gulp.task('prod-postbuild', function () {
 });
 
 gulp.task('prod-build', function () {
-    runSequence('prod-bundle', 'prod-postbuild');
+    return runSequence('prod-bundle', 'prod-postbuild');
 });
 
 gulp.task('prod-start', ['prod-build'], function () {

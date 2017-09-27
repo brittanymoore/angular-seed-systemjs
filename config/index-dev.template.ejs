@@ -8,13 +8,13 @@
     </head>
     <body>
         
-        <app-main>Loading...</app-main>
+        <app-root>Loading...</app-root>
 
         <script src="node_modules/systemjs/dist/system.src.js"></script>
-        <script src="systemjs.config.js"></script>
+        <script src="config/systemjs.config.js"></script>
 
         <script>
-            System.import('dev/src/main.js').catch(function (err) {
+            System.import('dev').catch(function (err) {
                 console.error(err);
             });
         </script>
