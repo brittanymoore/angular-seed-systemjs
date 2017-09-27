@@ -16,7 +16,7 @@ System.config({
     },
     packages: {
         dev: { main: './src/main.js', defaultExtension: 'js' },
-        app: { main: './src/main.js', defaultExtension: 'js' },
+        app: { main: './src/main-aot.js', defaultExtension: 'js' },
         'rxjs': {},
         'core-js': {},
         'zone.js': {}

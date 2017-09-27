@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig",
+    "compilerOptions": {
+        "outDir": "dist",
+        "module": "es2015",
+        "types": [ "node" ], 
+        "noImplicitAny": true
+    },
+    "angularCompilerOptions": {
+        "genDir": "aot",
+        "skipMetadataEmit": true
+    },
+    "exclude": [
+        "node_modules",
+        "src/**/*.spec.ts",
+        "src/**/*.e2e.ts"
+    ]
+}

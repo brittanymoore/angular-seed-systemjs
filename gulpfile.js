@@ -7,6 +7,7 @@ const inlineNg2Template = require('gulp-inline-ng2-template');
 const ejs = require('gulp-ejs');
 const del = require('del');
 const runSequence = require('run-sequence');
+const ngc = require('gulp-ngc');
 
 const tsconfig = require('./tsconfig.json');
 
@@ -75,8 +76,9 @@ gulp.task('prod-build-script', function () {
             useRelativePaths: true,
             supportNonExistentFiles: true
         }))
-        .pipe(typescript(tsconfig.compilerOptions))
-        .pipe(gulp.dest(PROD_OUTPUT));
+        //.pipe(typescript(tsconfig.compilerOptions))
+        .pipe(ngc('tsconfig-aot.json'));
+        //.pipe(gulp.dest(PROD_OUTPUT));
 });
 
 gulp.task('prod-copy-index', function () {
@@ -92,11 +94,11 @@ gulp.task('prod-bundle', ['prod-copy-index', 'prod-build-script'], function () {
             minify: true,
             mangle: true,
             rollup: true
-        })
+    });
 });
 
 gulp.task('prod-postbuild', function () {
-    return del(['dist/src/**']);
+    return del(['dist/src', 'dist/aot', 'aot']);
 });
 
 gulp.task('prod-build', function () {
@@ -104,12 +106,10 @@ gulp.task('prod-build', function () {
 });
 
 gulp.task('prod-start', ['prod-build'], function () {
-    
-    browserSync.init({
+    return browserSync.init({
         startPath: '',
         server: { baseDir: './dist' }
     });
-
 });
 
 // default task is dev start
