@@ -6,7 +6,8 @@
         "build": "gulp dev-build",
         "build:prod": "gulp prod-build",
         "start": "gulp",
-        "start:prod": "gulp prod-start"
+        "start:prod": "gulp prod-start",
+        "lint": "tslint -c ./config/tslint.json --type-check 'src/**/*.ts' -p ./tsconfig.json"
     },
     "keywords": [],
     "author": "",
@@ -25,6 +26,7 @@
     "devDependencies": {
         "@types/node": "^8.0.30",
         "browser-sync": "^2.18.13",
+        "codelyzer": "^3.2.0",
         "del": "^3.0.0",
         "gulp": "^3.9.1",
         "gulp-ejs": "^3.0.1",
@@ -34,6 +36,7 @@
         "gulp-typescript": "^3.2.2",
         "run-sequence": "^2.2.0",
         "systemjs-builder": "^0.16.11",
+        "tslint": "^5.7.0",
         "typescript": "^2.5.2"
     }
 }

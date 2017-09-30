@@ -28,7 +28,10 @@ const DEV_OUTPUT_PATHS = {
 };
 
 gulp.task('dev-build-script', function () {
-    return gulp.src(SOURCE_PATHS['ts'], { base: './' })
+
+    const tsProject = typescript.createProject('tsconfig.json', { noResolve: true });
+
+    return tsProject.src()
         .pipe(typescript(tsconfig.compilerOptions))
         .pipe(gulp.dest(DEV_OUTPUT_PATHS['ts']));
 });
@@ -76,9 +79,7 @@ gulp.task('prod-build-script', function () {
             useRelativePaths: true,
             supportNonExistentFiles: true
         }))
-        //.pipe(typescript(tsconfig.compilerOptions))
         .pipe(ngc('tsconfig-aot.json'));
-        //.pipe(gulp.dest(PROD_OUTPUT));
 });
 
 gulp.task('prod-copy-index', function () {
