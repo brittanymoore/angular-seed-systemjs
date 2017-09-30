@@ -5,12 +5,14 @@
         "target": "es5",
         "lib": ["es6", "dom"],  
         "typeRoots": ["node_modules/@types"],
-        "types": ["node"],  
+        "types": ["node", "jasmine"],  
         "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true
     },
+    "compileOnSave": false,
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "src/main-aot.ts"
     ]
 }
